@@ -1,8 +1,0 @@
-language: go
-
-go: 1.1.2
-
-notifications:
-  email: sam@openxo.com
-  hipchat: 713f63621f441fc7e38c9e40107553@270454
-
