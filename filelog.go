@@ -80,7 +80,6 @@ func NewFileLogWriter(fname string, rotate bool) *FileLogWriter {
 					}
 				}
 			}
-			os.Create(fname)
 		}
 	}
 
@@ -174,7 +173,7 @@ func (w *FileLogWriter) intRotate() error {
 	}
 
 	// Open the log file
-	fd, err := os.OpenFile(w.filename, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0660)
+	fd, err := os.Create(w.filename)
 	if err != nil {
 		return err
 	}
